@@ -15,12 +15,19 @@ app.use(express.json());
 //connect to the database
 connectDB();
 
+// Root route
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome to the API!",
+  });
+});
+
 //routes
 app.use("/api/users", userRoutes);
 
 app.use("/api/products", (req, res) => {
   return res.status(200).json({
-    message: "This is new feature change, a new route for products samin",
+    message: "This is new feature change, a new route for products samin, t1",
   });
 });
 
